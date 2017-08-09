@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var article1={
+var content={
     title: 'article1 about powershell',
     heading:'article1',
     content:   
@@ -52,9 +52,11 @@ return htmlTemplate;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
 app.get('/article1', function (req, res) {
   res.send(createTemplate(article1));
 });
+
 app.get('/article2', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article2.html'));
 });
