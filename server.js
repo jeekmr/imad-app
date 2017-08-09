@@ -5,6 +5,44 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var article1={
+    title: 'article1 about powershell',
+    heading:'article1',
+    content:   
+    `<p>They are both used to run external programs like ping or copy, and give you way to automate tasks by writing a script/batch file. But PowerShell is a lot more than that. First of all it provides a very rich set of commands (calleds cmdlets) that integrate deeply with windows and most of Microsoft products.
+    </p>`
+};
+
+var htmlTemplate=`
+<html>
+<head>
+    <title>
+        ${title}
+        </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+</head>
+<body>
+        <div>
+        <a href="/">home</a>
+        </div>
+    <hr/>
+        <h3>
+            ${heading}
+        </h3>
+
+        <div>
+            ${content}
+        </div>
+
+</body>
+
+
+</html>
+
+
+
+`;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
