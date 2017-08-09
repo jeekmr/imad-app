@@ -13,6 +13,11 @@ var article1={
     `<p>They are both used to run external programs like ping or copy, and give you way to automate tasks by writing a script/batch file. But PowerShell is a lot more than that. First of all it provides a very rich set of commands (calleds cmdlets) that integrate deeply with windows and most of Microsoft products.
     </p>`
 };
+function createTemplte(data){
+    var title= data.title;
+    var heading= data.heading;
+    var content= data.content;
+    
 
 var htmlTemplate=`
 <html>
@@ -40,14 +45,15 @@ var htmlTemplate=`
 
 </html>
 
-
-
 `;
+
+return htmlTemplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/article1', function (req, res) {
-  res.sendFile(path.join(__dirname, 'article1.html'));
+  res.send(createTemplate(article1));
 });
 app.get('/article2', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article2.html'));
