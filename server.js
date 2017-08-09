@@ -14,7 +14,7 @@ app.get('/article1', function (req, res) {
 app.get('/article2', function (req, res) {
   res.send('article2 is selected');
 });
-app.get('/article1', function (req, res) {
+app.get('/article3', function (req, res) {
   res.send('article3 is selected');
 });
 
