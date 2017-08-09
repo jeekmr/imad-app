@@ -13,7 +13,7 @@ var article1={
     `<p>They are both used to run external programs like ping or copy, and give you way to automate tasks by writing a script/batch file. But PowerShell is a lot more than that. First of all it provides a very rich set of commands (calleds cmdlets) that integrate deeply with windows and most of Microsoft products.
     </p>`
 };
-function createTemplte(data){
+function createTemplte (data){
     var title= data.title;
     var heading= data.heading;
     var content= data.content;
@@ -44,7 +44,6 @@ var htmlTemplate=`
 </html>
 
 `;
-
 return htmlTemplate;
 }
 app.get('/', function (req, res) {
@@ -52,7 +51,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article1', function (req, res) {
-  res.send(createTemplate(article1));
+  res.send(createTemplte(article1));
 });
 
 app.get('/article2', function (req, res) {
