@@ -21,17 +21,17 @@ function createTemplte(data){
 
 var htmlTemplate=`
 <html>
-<head>
-    <title>
+    <head>
+      <title>
         ${title}
-        </title>
+          </title>
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
-</head>
+    </head>
 <body>
         <div>
         <a href="/">home</a>
         </div>
-    <hr/>
+        <hr/>
         <h3>
             ${heading}
         </h3>
@@ -39,10 +39,8 @@ var htmlTemplate=`
         <div>
             ${content}
         </div>
-
+    </div>
 </body>
-
-
 </html>
 
 `;
