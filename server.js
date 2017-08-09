@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var content={
+var article1={
     title: 'article1 about powershell',
     heading:'article1',
     content:   
