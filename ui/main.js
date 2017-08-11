@@ -1,4 +1,4 @@
-console.log('Loaded!');
+/*console.log('Loaded!');
 var element= document.getElementById('para');
 element.innerHTML='new value';
 
@@ -14,4 +14,13 @@ img.onclick=function(){
     var interval=setInterval(moveRight,100);
     
    
-};
+};*/
+//counter code
+var counter=0;
+
+var button=document.getElementById("counter");
+button.onclick=function(){
+    var counter=counter+1;
+    
+    
+}; 
