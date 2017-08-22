@@ -43,7 +43,7 @@ button.onclick=function(){
         
     }
      //counter=counter+1;
-    request.open('GET','http://jeekmr.imad.hasura-app.io/counter,true);
+    request.open('GET','http://jeekmr.imad.hasura-app.io/counter', true);
     request.send(null);
     
     
@@ -51,24 +51,44 @@ button.onclick=function(){
 
 //listing names
 
-var nameInput =document.getElementById('name');
-var name =nameInput.value;
-var submit= document.getElementById('submitbutton')
+
+var submit= document.getElementById('submitbutton');
 submit.onclick=function(){ 
     
     
-    
-    var names=['name1','name2','name3'];
-    var list='';
-    for(var i=0;i<=names.length;i++){
-        lsit += '<li>'+ names[i]+ '</li>'
+  var request= new XMLHttpRequest();
+
+    request.onreadystatechange=function(){
         
+        if(request.readystate=== XMLHttpRequest.DONE){
+            if(request.status ===200){
+            var names=request.responseText;
+            names= JSON.parse(names);
+            var list='';
+            for(var i=0;i<=names.length;i++)
+            {
+        list += '<li>'+ names[i]+ '</li>';
+    } 
         var ul=document.getElementById('listname');
         ul.innerHTML=list;
         
+            }
+            
+            
+        }
+        
+        
     }
-}
+     //counter=counter+1;
 
+    var nameInput =document.getElementById('name');
+var name =nameInput.value;
+    
+        request.open('GET','http://jeekmr.imad.hasura-app.io/submit-name?name=', true);
+    request.send(null);
+    
+    
+};  
 
 
 
