@@ -18,6 +18,7 @@ img.onclick=function(){
 //counter code
 
 
+/* 
 var button=document.getElementById('counter');
 var counter=0;
 button.onclick=function(){
@@ -48,6 +49,7 @@ button.onclick=function(){
     
     
 }; 
+*/
 
 //listing names
 
@@ -60,7 +62,7 @@ submit.onclick=function(){
 
     request.onreadystatechange=function(){
         
-        if(request.readystate=== XMLHttpRequest.DONE){
+        if(request.readyState=== XMLHttpRequest.DONE){
             if(request.status ===200){
             var names=request.responseText;
             names= JSON.parse(names);
@@ -71,18 +73,13 @@ submit.onclick=function(){
     } 
         var ul=document.getElementById('listname');
         ul.innerHTML=list;
-        
             }
-            
-            
         }
-        
-        
     }
      //counter=counter+1;
 
     var nameInput =document.getElementById('name');
-var name =nameInput.value;
+    var name =nameInput.value;
     
         request.open('GET','http://jeekmr.imad.hasura-app.io/submit-name?name=', true);
     request.send(null);
