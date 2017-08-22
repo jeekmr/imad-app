@@ -87,7 +87,7 @@ app.get('/ui/profile.jpg', function (req, res) {
 var names=[];
 app.get('/submit-name',function(req,res){
    
-   var name= req.query.name;
+   var name= req.paras.name;
    
    names.push(name);
    
